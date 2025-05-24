@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+terfrom flask import Flask, render_template, request, redirect
 import sqlite3
 import os
 from sendgrid import SendGridAPIClient
@@ -7,8 +7,8 @@ from sendgrid.helpers.mail import Mail
 app = Flask(__name__)
 
 
-SENDGRID_API_KEY = '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'
-ADMIN_EMAIL = 'ameer.hamza@alphabridgeconsulting.com'
+SENDGRID_API_KEY = 'Enter Your API Key'
+ADMIN_EMAIL = 'Enter Your admin Email'
 
 def init_db():
     conn = sqlite3.connect('contact.db')
@@ -30,7 +30,7 @@ def send_email(to_email, subject, content):
         return
 
     message = Mail(
-        from_email='ameer.hamza@alphabridgeconsulting.com',
+        from_email='Enter Your From Email',
         to_emails=to_email,
         subject=subject,
         plain_text_content=content
